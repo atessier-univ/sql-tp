@@ -58,7 +58,7 @@ INSERT INTO materiels (nom, quantite) VALUES
    ('Boîte à outils', 7);
 
 -- AJOUT de 10 lignes dans etudiants 
-INSERT INTO etudiants (nom, prenom, numero_etudiant) VALUES
+INSERT INTO etudiants (prenom, nom, numero_etudiant) VALUES
    ('Jean', 'DUPONT', 22001111),
    ('Paul', 'RIVIERE', 22001112),
    ('Phillipe', 'ETANG', 22001113),
