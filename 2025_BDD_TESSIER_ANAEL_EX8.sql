@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS disponibilites(
 
 -- Modifiez la table "reservation" en ajoutant une nouvelle colonne "id_disponibilite"
 ALTER TABLE IF EXISTS reservations
-ADD IF NOT EXISTS disponibilite_id INT NOT NULL,
+ADD IF NOT EXISTS disponibilite_id INT NOT NULL,    -- Permet de contraindre la création de réservation dans des périodes possible mais problème si déjà des data dans la table
 ADD IF NOT EXISTS FOREIGN KEY(disponibilite_id) REFERENCES disponibilites(disponibilite_id);
