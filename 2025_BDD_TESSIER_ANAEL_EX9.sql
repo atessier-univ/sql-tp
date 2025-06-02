@@ -4,6 +4,7 @@
 --      id_reservation (clé étrangère référençant la table "Reservation") 
 --      date_retour (date à laquelle le matériel a été rendu) 
 --      retard (indicateur de retard, par exemple, un booléen)
+DROP TABLE IF EXISTS retourmateriels;
 CREATE TABLE IF NOT EXISTS retourmateriels (
     retour_id SERIAL,
     reservation_id INT NOT NULL,
@@ -38,7 +39,7 @@ SET retard =
 -- certains à l'heure et d'autres en retard, pour vérifier que les contraintes 
 -- sont correctement appliquées et que les pénalités sont calculées de manière appropriée.
 SELECT 
-    reservation_id,
+    r.reservation_id,
     r.date_fin - r.date_retour_effectif as temp_retard
 FROM reservations as r
 JOIN retourmateriels as rm ON rm.reservation_id = r.reservation_id
